@@ -47,7 +47,7 @@ echo ]}
 Edit ServerActive parameter server address
 
 ```bash
-ServerActive=zabbix.9splay.com
+ServerActive=zabbix.xxxxx.com
 ```
 
 ![](https://i.imgur.com/Uoa12eg.png)
@@ -56,7 +56,7 @@ ServerActive=zabbix.9splay.com
 Edit same hostname with Zabbix Web
 
 ```bash
-Hostname=NL-9S-SDWeb02-211.20.178.166
+Hostname=NL-xx-SDWeb02-xxx.xx.xxx.xxx
 ```
 
 ![](https://i.imgur.com/HXeJfnp.png)
@@ -118,28 +118,34 @@ Click auto find exe application to edit console file name, every console name us
 
 ![](https://i.imgur.com/GzNP3ug.png)
 
-設定好後把預設為 Disabled 的 改為 Enabled
+把預設為 Disabled 的 改為 Enabled
+Change from Disabled to Enabled
 
 ![](https://i.imgur.com/NmGqz3n.png)
 
 ![](https://i.imgur.com/HyHwYCj.png)
 
 在 triggers 確認各項程式監控是否為 Disabled ，也將他打開設為 Enabled
+change from Disabled to Enabled
+
 
 ![](https://i.imgur.com/OOH2K8m.png)
 
 然後到 Latest data 選擇該 Hosts，過些時間就可以看到監控的狀態
+Check application monitor status in Latest data page
 
 ![](https://i.imgur.com/sAdA52L.png)
 
 ![](https://i.imgur.com/qPUexsf.png)
 
 > 監控狀態指示
+> Monitor Status notice
 
-1：執行中
+1：執行中 (Running)
 
-0：未執行 （若為 0 會觸發Triggers）
+0：未執行 （若為 0 會觸發Triggers） (Not Running then triggers)
 
 ![](https://i.imgur.com/OPqwt73.png)
 
 設定完成。
+Complete.
