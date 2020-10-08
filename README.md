@@ -2,7 +2,7 @@
 
 ## 建立 cmd console 監控套件
 
-在欲監控的伺服器新增以下兩個Batch檔，並放到特定位置
+在欲監控的伺服器新增以下兩個Batch檔，並放到特定位置<br>
 Create following 2 batch file on monitor server , and save to folder you want.
 
 ![](https://i.imgur.com/jgSiKfK.png)
@@ -40,10 +40,10 @@ if !n1! neq !n! (
 echo ]}
 ```
 
-## 修改 zabbix_agentd.conf 設定檔
+## 修改 zabbix_agentd.conf 設定檔<br>
 ## Edit zabbix_agentd.conf file
 
-設定 ServerActive 伺服器位址
+設定 ServerActive 伺服器位址<br>
 Edit ServerActive parameter server address
 
 ```bash
@@ -52,7 +52,7 @@ ServerActive=zabbix.9splay.com
 
 ![](https://i.imgur.com/Uoa12eg.png)
 
-設定與Zabbix Web上相同Hostname
+設定與Zabbix Web上相同Hostname<br>
 Edit same hostname with Zabbix Web
 
 ```bash
@@ -61,7 +61,7 @@ Hostname=NL-9S-SDWeb02-211.20.178.166
 
 ![](https://i.imgur.com/HXeJfnp.png)
 
-將下列兩個設定修改至 **1** 
+將下列兩個設定修改至 **1** <br>
 Edit following 2 parameter from 0 to 1 (enable it)
 
 ![](https://i.imgur.com/bQZhTwD.png)
@@ -71,7 +71,7 @@ EnableRemoteCommands=1
 LogRemoteCommands=1
 ```
 
-加入下列兩行設定 （檔案路徑可自行更改）
+加入下列兩行設定 （檔案路徑可自行更改）<br>
 Adding following 2 parameter to file end (batch file path can change if you want)
 
 ![](https://i.imgur.com/jDE9YI9.png)
@@ -82,29 +82,30 @@ UserParameter=findexe[],"C:\zabbix\findexe.bat" $1
 UserParameter=check_status[],"C:\zabbix\check_exe_status.bat" $1
 ```
 
-設定好存檔，再重啟 zabbix_agentd
+設定好存檔，再重啟 zabbix_agentd<br>
 Save config file , and restart zabbix_agentd
 
 ![](https://i.imgur.com/hoeuKJu.png)
 
-## Zabbix Web 上 Host 及 template 設定
+## Zabbix Web 上 Host 及 template 設定<br>
+## Zabbix Web Hosts and template Setting
 
-在要監控的 Host 裡加入 Application_Console_Monitor 這個 Template
+在要監控的 Host 裡加入 Application_Console_Monitor 這個 Template <br>
 Import Template to you want monitor hosts
 
 ![](https://i.imgur.com/GbasMZS.png)
 
-因為預設每台機器要監控的程式名稱不同，所以加入後需要再 Unlink，讓每台機器監控的清單不同。
+因為預設每台機器要監控的程式名稱不同，所以加入後需要再 Unlink，讓每台機器監控的清單不同。<br>
 After import need to unlink template , let every hosts monitor difference application.
 
 ![](https://i.imgur.com/wHF54wh.png)
 
-點選該 host 進入查看 Discovery rules 
+點選該 host 進入查看 Discovery rules <br>
 Click hosts check Discovery rules
 
 ![](https://i.imgur.com/NKSK1gW.png)
 
-進入 auto find exe application ， 修改欲監控的 console 名稱，每個名稱以空白間隔，若數量太多也會被 key 欄位的字元長度限制
+進入 auto find exe application ， 修改欲監控的 console 名稱，每個名稱以空白間隔，若數量太多也會被 key 欄位的字元長度限制 <br>
 Click auto find exe application to edit console file name, every console name use space between 2 console name
 
 ![](https://i.imgur.com/aM2VZDM.png)
